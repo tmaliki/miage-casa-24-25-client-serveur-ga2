@@ -101,8 +101,13 @@ class Abonne extends Personne {
   }
 
   // méthode pour afficher les livres emprunter d'un abonné
-  afficherLivresEmpruntes() {
-    //
+  afficherLivresEmpruntes(bibliotheque) {
+    const listeEmpruntsAbonne = bibliotheque.listeEmprunts.filter((emp) => emp.abonne.matricule === this.matricule);
+
+    console.log(`\n********** Liste des emprunts de l'abonée ${this.prenom} ${this.nom} ***********`);
+    if (listeEmpruntsAbonne.length) console.table(listeEmpruntsAbonne);
+    else console.log("Aucun emprunt trouvé pour cet abonné !");
+    console.log("**********************************************************************");
   }
 }
 
@@ -152,7 +157,17 @@ class Emprunt {
 
   // méthode pour vérifier si un livre emprunter est est en retard
   estEnRetard() {
-    //
+    // Durée d'enprunt autorisée : 15jous
+    const dureeAutorisee = 15;
+
+    // Date actuelle si l'emprunt n'a pas encore été retourné
+    const dateDeReference = this.dateRetour ? this.dateRetour : new Date();
+
+    // Calcul de la différence en jours entre la date d'emprunt et la date de retourn ou aujourd'hui
+    const differenceEnMillisecondes = dateDeReference - this.dateEmprunt;
+    const differenceEnJours = differenceEnMillisecondes / (1000 * 60 * 60 * 24);
+
+    return differenceEnJours > dureeAutorisee;
   }
 }
 
