@@ -1,0 +1,9 @@
+1. Code synchrone
+Le code synchrone en JavaScript s'exécute ligne par ligne
+et bloque l'exécution des instructions suivantes tant que
+la tâche en cours n'est pas terminée.
+
+2. Code asynchrone
+Le asynchrone en JavaScript ne bloque pas l'exécution des instructions
+suivantes. Il permet d'exécuter du code en arrière-plan et
+d'éffectuer d'autres tâches en attendant la fin du traitement.
