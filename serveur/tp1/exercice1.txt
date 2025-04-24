@@ -1,0 +1,19 @@
+function addition(n1, n2) { return n1 + n2; }
+
+function soustraction(n1, n2) { return n1 - n2; }
+
+function multiplication(n1, n2) { return n1 * n2; }
+
+function division(n1, n2) { return n1 / n2; }
+
+// phase de test
+> addition(5, 9)
+14
+> soustraction(8, 2)
+6
+>
+> multiplication(9, 9)
+81
+> division(7, 4)
+1.75
+>
