@@ -11,3 +11,9 @@ $ npm install bootstrap
 
 ### Installation du framework express.js
 $ npm install express
+
+### Installation de bootstrap et express.js
+$ npm install express bootstrap
+
+### Installation du package nodemon
+$ npm install --save-dev nodemon
